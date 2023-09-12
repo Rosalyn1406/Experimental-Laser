@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Nov  8 13:54:50 2021
+
+@author: Rosalyn
+"""
+
+# import libraries
+import csv 
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+
+time=[]
+photodiode_signal=[]
+
+with open("real_backgroungCH1.csv","r") as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=",")
+    line_count = 0
+    for row in csv_reader:
+        time.append(float(row[3]))
+        print( "time:", row[3])
+        photodiode_signal.append(float(row[4]))
+        print( "photodiode signal:", row[4])
+        
+# plotting data 
+# plt.plot(time,voltage_raw,'r-')
